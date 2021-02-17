@@ -7,6 +7,8 @@ defmodule DiscussWeb.User do
     field :token, :string
 
     timestamps()
+
+    has_many :topics, DiscussWeb.Topic
   end
 
   def changeset(struct, params \\ %{}) do
