@@ -3,6 +3,9 @@ defmodule DiscussWeb.UserSocket do
 
   ## Channels
   # channel "room:*", DiscussWeb.RoomChannel
+  channel "comments:*", DiscussWeb.CommentChannel
+
+  ##deprecated transport :websocket, Phoenix.Transports.WebSocket
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
