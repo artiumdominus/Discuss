@@ -59,6 +59,12 @@ defmodule DiscussWeb do
 
       import Plug.Conn
       import Phoenix.Controller
+
+      def set_user(conn, _params) do
+        user_id = get_session(conn, :user_id)
+    
+        assign(conn, :user, user_id && Discuss.Repo.get(DiscussWeb.User, user_id))
+      end
     end
   end
 
