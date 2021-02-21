@@ -1,6 +1,8 @@
 defmodule DiscussWeb.User do
   use DiscussWeb, :model
 
+  @derive {Jason.Encoder, only: [:email]}
+
   schema "users" do
     field :email, :string
     field :provider, :string
